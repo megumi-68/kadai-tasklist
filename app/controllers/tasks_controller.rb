@@ -55,7 +55,7 @@ class TasksController < ApplicationController
   def task_params
     params.require(:task).permit(:content,:status)
   end
-end
+
 
  def correct_user
     @task = current_user.tasks.find_by(id: params[:id])
@@ -63,6 +63,9 @@ end
       redirect_to root_url
     end
  end
+end
+
+
 
 
 
